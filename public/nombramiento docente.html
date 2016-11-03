@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>REGISTRO DE NOMBRAMIENTO DE DOCENTE</title>
+	<!--<link rel="stylesheet" type="text/css" href="css/estilos.css">-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+<header>
+	<dir id="titulo_pagina" class="jumbotron container">
+		<h1 class="text-center">Registro de Nombramiento de Docentes</h1>
+		<h2 class="text-right">Gestion 1/2016</h2>
+	</dir>
+</header>
+<div id="formulario" class="container">
+	<form action="nombramiento" method="post" onsubmit="mensajeExito()" role="form">
+		<label id="seleccionar_docente" for="selecconar_docente" class="bg-info">Docente:</label>
+		<select name="lista_de_docentes" id="lista_docentes" class="form-control">
+			<option value="SELECCIONE_EL_DOCENTE">--SELECCIONE EL DOCENTE--</option>
+			<option value="DOC0001">ACHA PEREZ SAMUEL</option>
+			<option value="DOC0002">AGREDA CORRALES  LUIS ROBERTO</option>
+			<option value="DOC0013">GRILO SALVATIERRA ESTHELA</option>
+			<option value="DOC0015">HERRERA ACEBEY JOHNNY</option>
+			<option value="DOC0016">ISNADO DONAIRE ADOLFO</option>
+			<option value="DOC0028">TERRAZAS 	PASTOR 	RAFAEL</option>
+			<option value="DOC0039">TORRICO BASCOPE ROSEMARY</option>
+			<option value="DOC0040">ORELLANA ARAOZ JORGE WALTER</option>
+			<option value="DOC0041">ALCOCER GARNICA  RICHARD CESAR</option>
+			<option value="DOC0042">ALCON PUÑA  JUAN NOLASCO</option>
+			<option value="DOC0044">ALEJO ESPINOZA LUCIO  </option>
+			<option value="DOC0046">ALFARO DENUS GONZALO</option>
+			<option value="DOC0047">ALVAREZ CAERO  MARIA MERCEDES</option>
+			<option value="DOC0048">ALVAREZ QUIROZ  RICHARD MILTON</option>
+			<option value="DOC0049">ANDRADE UZIEDA  MARKO JORGE</option>
+			<option value="DOC0050">ANTEZANA CAMACHO  MARCELO</option>
+			<option value="DOC0051">ANTEZANA FERNANDEZ  HENRY</option>
+			<option value="DOC0052">ANTEZANA NOGALES  VICTOR HUGO</option>
+			<option value="DOC0053">ANTEZANA ROMAN  OMAR</option>
+			<option value="DOC0054">ANTEZANA VALERA  CAROLA FATIMA</option>
+
+
+		</select>
+		<br>
+		<br>
+		<section>
+			<div id="datos_docente" class="bg-info form-group">
+
+				<label for="nombre_profecional">- Nombre del Profecional:</label>
+				<br>
+				<input type="text" name="nom_prof" size="50" placeholder="Escriba el nombre del docente" required class="form-control">
+				<br>
+				<label for="facultad_doc">- Facultad:             </label>
+				<br>
+				<input type="text" name="fac_doc" size="50" placeholder="Escriba la facultad" required class="form-control">
+				<br>
+				<label for="carrera">- Carrera:                   </label>
+				<br>
+				<input type="text" name="Carr_doc" size="50" placeholder="Escriba la carrera" required class="form-control">
+				<br>
+				<label for="departamento">- Departamento:         </label>
+				<br>
+				<input type="text" name="dep_doc" size="50" placeholder="Escriba el departamento" required class="form-control">
+				<br>
+				<label for="diploma_academico">- Diploma Academico:         </label>
+				<br>
+				<input type="text" name="dip_ac_doc" size="50" required class="form-control">
+				<br>
+				<label for="titulo_docente">- Titulo Profesional en provicion nacional:         </label>
+				<br>
+				<input type="text" name="tit_doc" size="50" required class="form-control">
+				<br>
+
+			</div>
+
+		</section>
+		<section>
+			<div id="categoria_nombramiento" class="bg-info">
+
+				<h4>Categoria del Nombramiento Solicitado:</h3>
+
+					<input type="checkbox" name="interino">
+					<label for="interino">Interino</label>
+					<br>
+					<input type="checkbox" name="invitado">
+					<label for="invitado">Invitado</label>
+					<br>
+					<input type="checkbox" name="asistente">
+					<label for="invitado">Asistente</label>
+					<br>
+					<input type="checkbox" name="adjunto">
+					<label for="invitado">Adjunto</label>
+					<br>
+					<input type="checkbox" name="catedratico">
+					<label for="invitado">Catedratico</label>
+					<br>
+
+
+
+			</div>
+		</section>
+		<section>
+			<div id="materias_asignadas" class="bg-info form-group">
+				<label for="asignatura">Asignatura(s):</label>
+				<br>
+				<input type="text" name="asignatura_docente" class="form-control">
+				<br>
+				<label>Tiempo de dedicacion:</label>
+				<br>
+				<input type="radio" name="dedicacion" value="parcial" checked>Parcial
+				<input type="radio" name="dedicacion" value="exclusivo">Exclusivo
+			</div>
+		</section>
+		<section>
+			<div id="fechas" class="bg-info form-group">
+				<label>Nombramiento a partir de:</label>
+				<input type="date" name="fecha_inicio">
+				<label>Fecha de solicitud:</label>
+				<input type="date" name="fecha_solicitud">
+				<label>Tiempo de duracion:</label>
+				<input type="text" name="tiempo">
+				<br>
+
+			</div>
+		</section>
+		<input type="submit" value="Aceptar" id="enviar_datos" class="btn btn-primary btn-lg">
+
+	</form>
+</div>
+
+<script type="text/javascript">
+	function mensajeExito()
+	{
+		alert("Modificacion guardada.Haga clik en Aceptar para visualizar la solicitud de nombramiento correspondiente e imprimirla");
+	}
+</script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

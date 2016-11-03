@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MODIFICACION DE NOMBRAMIENTO DE DOCENTE</title>
+	<!--<link rel="stylesheet" type="text/css" href="css/estilos.css">-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<header>
+		<dir id="titulo_pagina" class="jumbotron container">
+			<h1 class="text-center">Modificacion de Nombramiento de Docentes</h1>
+			<h2 class="text-right">Gestion 1/2016</h2>
+		</dir>
+	</header>
+	<div id="formulario" class="container">
+		<form action="modificacion_nom_docente_en_pdf.php" method="post" onsubmit="mensajeExito()" role="form">
+			<label id="seleccionar_docente" for="selecconar_docente" class="bg-info">Docente:</label>
+			<select name="lista_de_docentes" id="lista_docentes" class="form-control">
+				<option value="SELECCIONE_EL_DOCENTE">--SELECCIONE EL DOCENTE--</option>
+				<option value="s">ACHA PEREZ SAMUEL</option>
+				<option value="s">AGREDA CORRALES  LUIS ROBERTO</option>
+				<option value="s">GRILO SALVATIERRA ESTHELA</option>
+				<option value="s">HERRERA ACEBEY JOHNNY</option>
+				<option value="s">ISNADO DONAIRE ADOLFO</option>
+				<option value="s">TERRAZAS 	PASTOR 	RAFAEL</option>
+				<option value="s">TORRICO BASCOPE ROSEMARY</option>
+				<option value="s">ORELLANA ARAOZ JORGE WALTER</option>
+				<option value="s">ALCOCER GARNICA  RICHARD CESAR</option>
+				<option value="s">ALCON PUÑA  JUAN NOLASCO</option>
+				<option value="s">ALEJO ESPINOZA LUCIO  </option>
+				<option value="s">ALFARO DENUS GONZALO</option>
+				<option value="s">ALVAREZ CAERO  MARIA MERCEDES</option>
+				<option value="s">ALVAREZ QUIROZ  RICHARD MILTON</option>
+				<option value="s">ANDRADE UZIEDA  MARKO JORGE</option>
+				<option value="s">ANTEZANA CAMACHO  MARCELO</option>
+				<option value="s">ANTEZANA FERNANDEZ  HENRY</option>
+				<option value="s">ANTEZANA NOGALES  VICTOR HUGO</option>
+				<option value="s">ANTEZANA ROMAN  OMAR</option>
+				<option value="s">ANTEZANA VALERA  CAROLA FATIMA</option>
+				<option value="s">ANTEZANA VALERA  JUANA AMALIA</option>
+				<option value="s">APARICIO YUJA  NANCY TATIANA</option>
+				<option value="s">ARANCIBIA GUZMAN  MARCELO EDUARDO</option>
+				<option value="s">ARANCIBIA MIRANDA  MARCO ANTONIO</option>
+				<option value="s">ARANIBAR LA FUENTE  LIGIA JACQUELINE</option>
+				<option value="s">ARCE GARCIA  OMAR ORLANDO</option>
+				<option value="s">ARISPE SANTANDER  AGUSTIN WALTER</option>
+				<option value="s">ARISPE SANTANDER  ALBERTO CARLOS</option>
+				<option value="s">ARNEZ CAMACHO  MARIA DEL CARMEN</option>
+				<option value="s">ARNEZ TORRICO  EDITH MARITZA</option>
+				<option value="s">ARRAZOLA RIVERO  SILVIA SUSANA</option>
+				<option value="s">ARZABE MAURE  JOSE OMAR</option>
+				<option value="s">AVILA ALBA  MARTHA TERESA</option>
+				<option value="s">AVILA LARA  ALFREDO ULDARICO</option>
+				<option value="s">AYLLON ACOSTA  JAIME</option>
+				<option value="s">AYOROA CARDOZO  JOSE RICHARD</option>
+				<option value="s">AZERO ALCOCER  PABLO RAMON</option>
+				<option value="s">BALDERRAMA ANGULO  ROGER WILMER</option>
+				<option value="s"></option>
+				<option value="s"></option>
+				<option value="s"></option>
+				<option value="s"></option>
+				<option value="s"></option>
+				<option value="s"></option>
+
+			</select>
+			<br>
+			<br>
+			<section>
+				<div id="datos_docente" class="bg-info form-group">
+					
+						<label for="nombre_profecional">- Nombre del Profecional:</label>
+						<br>
+						<input type="text" name="nom_prof" size="50" placeholder="Escriba el nombre del docente" required class="form-control">
+						<br>
+						<label for="facultad_doc">- Facultad:             </label>
+						<br>
+						<input type="text" name="fac_doc" size="50" placeholder="Escriba la facultad" required class="form-control">
+						<br>
+						<label for="carrera">- Carrera:                   </label>
+						<br>
+						<input type="text" name="Carr_doc" size="50" placeholder="Escriba la carrera" required class="form-control">
+						<br>
+						<label for="departamento">- Departamento:         </label>
+						<br>
+						<input type="text" name="dep_doc" size="50" placeholder="Escriba el departamento" required class="form-control">
+						<br>
+						<label for="diploma_academico">- Diploma Academico:         </label>
+						<br>
+						<input type="text" name="dip_ac_doc" size="50" required class="form-control">
+						<br>
+						<label for="titulo_docente">- Titulo Profesional en provicion nacional:         </label>
+						<br>
+						<input type="text" name="tit_doc" size="50" required class="form-control">
+						<br>
+						
+				</div>
+
+			</section>
+			<section>
+				<div id="categoria_nombramiento" class="bg-info"> 
+					
+						<h4>Categoria del Nombramiento Solicitado:</h3>
+
+						<input type="checkbox" name="interino">
+						<label for="interino">Interino</label>
+						<br>
+						<input type="checkbox" name="invitado">
+						<label for="invitado">Invitado</label>
+						<br>
+						<input type="checkbox" name="asistente">
+						<label for="invitado">Asistente</label>
+						<br>
+						<input type="checkbox" name="adjunto">
+						<label for="invitado">Adjunto</label>
+						<br>
+						<input type="checkbox" name="catedratico">
+						<label for="invitado">Catedratico</label>
+						<br>
+						
+
+					
+				</div>
+			</section>
+			<section>
+				<div id="materias_asignadas" class="bg-info form-group">
+					<label for="asignatura">Asignatura(s):</label>
+					<br>
+					<input type="text" name="asignatura_docente" class="form-control">
+					<br>
+					<label>Tiempo de dedicacion:</label>
+					<br>
+					<input type="radio" name="dedicacion" value="parcial" checked>Parcial
+					<input type="radio" name="dedicacion" value="exclusivo">Exclusivo
+				</div>
+			</section>
+			<section>
+				<div id="fechas" class="bg-info form-group">
+					<label>Nombramiento a partir de:</label>
+					<input type="date" name="fecha_inicio">
+					<label>Fecha de solicitud:</label>
+					<input type="date" name="fecha_solicitud">
+					<label>Tiempo de duracion:</label>
+					<input type="text" name="tiempo">
+					<br>
+					
+				</div>
+			</section>
+			<input type="submit" value="Aceptar" id="enviar_datos" class="btn btn-primary btn-lg">
+
+		</form>
+	</div>
+
+	<script type="text/javascript">
+		function mensajeExito() 
+		{
+		alert("Modificacion guardada.Haga clik en Aceptar para visualizar la solicitud de nombramiento correspondiente e imprimirla");
+	}
+	</script>
+	<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

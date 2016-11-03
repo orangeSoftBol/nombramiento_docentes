@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::post("nombramiento","NombramientoController@store");
+
+
+Route::resource('nombramiento', 'NombramientoController');
