@@ -13,7 +13,7 @@ h3
 {
 	color: #cc3300;
 	font-family: arial;
-	
+
 }
 label
 {
@@ -30,7 +30,7 @@ label
 {
 	font-family: arial;
 	margin-left: 40px;
-    border: 1px solid #cc3300; 
+    border: 1px solid #cc3300;
 	border-radius: 8px;
 	padding: 8px;
 }
@@ -42,17 +42,17 @@ label
 	border-radius: 10%;
 	font-size: 20px;
 	padding: 10px;
-	box-shadow: 10px 10px 10px black; 
+	box-shadow: 10px 10px 10px black;
 	margin-left: 30px;
 	cursor: pointer;
-	
+
 }
 #categoria_nombramiento
 {
 	font-family: arial;
 	margin-left: 40px;
 	display: inline-block;
-	border: 1px solid #cc3300; 
+	border: 1px solid #cc3300;
 	border-radius: 8px;
 	padding: 8px;
 }

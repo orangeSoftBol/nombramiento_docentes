@@ -10,11 +10,11 @@ class Nombramiento extends Model
     protected $table = 'NOMBRAMIENTO';
     protected $primaryKey = 'nombramiento_id';
     //protected $fillable = ['codigo','nombre','facultad','carrera','departamento','diploma','titulo','fecha_nombramiento','fecha_solicitud','duracion'];
-    //public $incrementing = false;
+    public $incrementing = false;
     public $timestamps = false;
 
 
-    protected $fillable = ['nombramiento_id', 'nombre'];
+    protected $fillable = ['carrera', 'departamento', 'facultad', 'diploma', 'titulo', 'tiempo', 'fecha_nombramiento', 'duracion'];
 
     public function docente()
     {

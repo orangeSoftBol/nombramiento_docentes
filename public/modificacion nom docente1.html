@@ -16,7 +16,7 @@
 		</dir>
 	</header>
 	<div id="formulario" class="container">
-		<form action="modificacion_nom_docente_en_pdf.php" method="post" name="formulario_modificacion_docente" onsubmit="return validacion()" role="form">
+		<form action="modificacion_nom_docente_en_pdf.php" method="post" onsubmit="mensajeExito()" role="form">
 			<label id="seleccionar_docente" for="selecconar_docente" class="bg-info">Docente:</label>
 			<select name="lista_de_docentes" id="lista_docentes" class="form-control">
 				<option value="SELECCIONE_EL_DOCENTE">--SELECCIONE EL DOCENTE--</option>
@@ -58,6 +58,12 @@
 				<option value="s">AYOROA CARDOZO  JOSE RICHARD</option>
 				<option value="s">AZERO ALCOCER  PABLO RAMON</option>
 				<option value="s">BALDERRAMA ANGULO  ROGER WILMER</option>
+				<option value="s"></option>
+				<option value="s"></option>
+				<option value="s"></option>
+				<option value="s"></option>
+				<option value="s"></option>
+				<option value="s"></option>
 
 			</select>
 			<br>
@@ -67,27 +73,27 @@
 					
 						<label for="nombre_profecional">- Nombre del Profecional:</label>
 						<br>
-						<input type="text" name="nom_prof" size="50" id="np" placeholder="Escriba el nombre del docente" class="form-control">
+						<input type="text" name="nom_prof" size="50" placeholder="Escriba el nombre del docente" required class="form-control">
 						<br>
 						<label for="facultad_doc">- Facultad:             </label>
 						<br>
-						<input type="text" name="fac_doc" size="50" id="fc" placeholder="Escriba la facultad" class="form-control">
+						<input type="text" name="fac_doc" size="50" placeholder="Escriba la facultad" required class="form-control">
 						<br>
 						<label for="carrera">- Carrera:                   </label>
 						<br>
-						<input type="text" name="carr_doc" size="50" id="cd" placeholder="Escriba la carrera" class="form-control">
+						<input type="text" name="Carr_doc" size="50" placeholder="Escriba la carrera" required class="form-control">
 						<br>
 						<label for="departamento">- Departamento:         </label>
 						<br>
-						<input type="text" name="dep_doc" size="50" id="dd" placeholder="Escriba el departamento" class="form-control">
+						<input type="text" name="dep_doc" size="50" placeholder="Escriba el departamento" required class="form-control">
 						<br>
 						<label for="diploma_academico">- Diploma Academico:         </label>
 						<br>
-						<input type="text" name="dip_ac_doc" size="50" id="dipd" class="form-control">
+						<input type="text" name="dip_ac_doc" size="50" required class="form-control">
 						<br>
 						<label for="titulo_docente">- Titulo Profesional en provicion nacional:         </label>
 						<br>
-						<input type="text" name="tit_doc" size="50" id="tpd" class="form-control">
+						<input type="text" name="tit_doc" size="50" required class="form-control">
 						<br>
 						
 				</div>
@@ -98,19 +104,19 @@
 					
 						<h4>Categoria del Nombramiento Solicitado:</h3>
 
-						<input type="checkbox" id="inter" name="interino">
+						<input type="checkbox" name="interino">
 						<label for="interino">Interino</label>
 						<br>
-						<input type="checkbox" id="invit" name="invitado">
+						<input type="checkbox" name="invitado">
 						<label for="invitado">Invitado</label>
 						<br>
-						<input type="checkbox" id="asist" name="asistente">
+						<input type="checkbox" name="asistente">
 						<label for="invitado">Asistente</label>
 						<br>
-						<input type="checkbox" id="adju" name="adjunto">
+						<input type="checkbox" name="adjunto">
 						<label for="invitado">Adjunto</label>
 						<br>
-						<input type="checkbox" id="catedra" name="catedratico">
+						<input type="checkbox" name="catedratico">
 						<label for="invitado">Catedratico</label>
 						<br>
 						
@@ -146,80 +152,12 @@
 
 		</form>
 	</div>
-	
-	<!--Validacion de todos los campos del formulario-->
-	<script>
-		function validacion() {
 
-			var valor_lista = document.getElementById("lista_docentes").selectedIndex;
-
-			if (valor_lista == null || valor_lista == 0) {
-				alert("DEBE SELECCIONAR UN DOCENTE");
-				return false;
-
-			} else {
-				var nommbre_docente = document.getElementById("np").value;
-
-				if (nommbre_docente == null || nommbre_docente.length == 0 || /^\s+$/.test(nommbre_docente) || !isNaN(nommbre_docente)) {
-					alert("INTRODUSCA UN NOMBRE DE DOCENTE VALIDO");
-					return false;
-
-				} else {
-					var facultad_docente = document.getElementById("fc").value;
-
-					if (facultad_docente == null || facultad_docente.length == 0 || /^\s+$/.test(facultad_docente) || !isNaN(facultad_docente)) {
-						alert("INTRODUSCA LA FACULTAD");
-						return false;
-
-					} else {
-						var carrera_docente = document.getElementById("cd").value;
-						
-						if (carrera_docente == null || carrera_docente.length == 0 || /^\s+$/.test(carrera_docente) || !isNaN(carrera_docente)) {
-							alert("INTRODUSCA LA CARRERA");
-							return false;
-						} else {
-							var departamento_docente = document.getElementById("dd").value;
-
-							if (departamento_docente == null || departamento_docente.length == 0 || /^\s+$/.test(departamento_docente) || !isNaN(departamento_docente)) {
-								alert("INTRODUSCA EL DEPARTAMENTo");
-								return false;
-							} else {
-								var diploma_docente = document.getElementById("dipd").value;
-								
-								if (diploma_docente == null || diploma_docente.length == 0 || /^\s+$/.test(diploma_docente) || !isNaN(diploma_docente)) {
-									alert("INTRODUSCA EL DIPLOMA ACADEMICO");
-									return false;
-								} else {
-									var titulo_profecional_docente = document.getElementById("tpd").value;
-
-									if (titulo_profecional_docente == null || titulo_profecional_docente.length == 0 || /^\s+$/.test(titulo_profecional_docente) || !isNaN(titulo_profecional_docente)) {
-										alert("DEBE INTRODUCIR EL TITULO PROFECIONAL DEL DOCENTE");
-										return false;
-									} else {
-										var check_interino = document.getElementById("inter");
-										var check_invitado = document.getElementById("invit");
-										var check_asistente = document.getElementById("asist");
-										var check_adjunto = document.getElementById("adju");
-										var check_catedratico = document.getElementById("catedra");
-
-										if (!check_interino.checked && !check_invitado.checked && !check_asistente.checked && !check_adjunto.checked && !check_catedratico.checked) {
-											alert("SELECCIONE UNA CATEGORIA PARA EL DOCENTE");
-											return false;
-										} else {
-											alert("MODIFICACION GUARDADA. HAGA CLIK EN ACEPTAR PARA VER EL FORMULARIO DE SOLICITUD E IMPRIMIRLO")
-										}
-									}
-								}
-							}
-							
-						}
-					}
-					
-				}
-				
-			}
-			
-		}
+	<script type="text/javascript">
+		function mensajeExito() 
+		{
+		alert("Modificacion guardada.Haga clik en Aceptar para visualizar la solicitud de nombramiento correspondiente e imprimirla");
+	}
 	</script>
 	<script src="js/bootstrap.min.js"></script>
 

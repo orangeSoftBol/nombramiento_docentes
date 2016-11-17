@@ -18,10 +18,16 @@ class NombramientoController extends Controller
         $nombramiento = new Nombramiento();
 
         //$nombramiento->CODIGO = "nombra0001";
-       echo($request->lista_de_docentes);
-        $nombramiento->nombre = $request->nom_prof;
-
-        $nombramiento->fk_docente = $request->lista_de_docentes;
+       //echo($request->lista_de_docentes);
+       $nombramiento->carrera = $request->lista_carrera;
+       $nombramiento->departamento = $request->lista_departamento;
+       $nombramiento->facultad = $request->lista_facultad;
+       $nombramiento->diploma = $request->diploma;
+       $nombramiento->titulo = $request->titulo;
+       $nombramiento->tiempo = $request->lista_dedicacion;
+       $nombramiento->fecha_nombramiento = $request->fecha_nombramiento;
+       $nombramiento->duracion = $request->duracion;
+       $nombramiento->fk_docente = $request->lista_docente;
 
         /*
         $nombramiento->facultad = $request->facultad;
