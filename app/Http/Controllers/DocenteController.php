@@ -44,6 +44,9 @@ class DocenteController extends Controller
         $docente->apellido_paterno = $request->apellido_paterno;
         $docente->apellido_materno = $request->apellido_materno;
         $docente->estado = $request->lista_estado;
+        $docente->tiempo = $request->lista_tiempo;
+        $docente->titulo = $request->titulo;
+        $docente->diploma = $request->diploma;
         //titulo
         //diploma
 

@@ -14,7 +14,7 @@ class Docente extends Model
     public $timestamps = false;
 
 
-    protected $fillable = ['nombre', 'apellido_paterno', 'apellido_materno', 'estado'];
+    protected $fillable = ['nombre', 'apellido_paterno', 'apellido_materno', 'tiempo', 'estado', 'titulo', 'diploma'];
 
 
 

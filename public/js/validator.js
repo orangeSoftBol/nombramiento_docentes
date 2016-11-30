@@ -1,6 +1,4 @@
-/**
- * Created by Cristhian on 16/11/2016.
- */
+
 $(document).ready(function() {
 $('#docente-form').bootstrapValidator({
 
