@@ -45,6 +45,8 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        //alert("No puede registrar un docente ya almacenado");
+        return redirect("prueba.php");
         return parent::render($request, $e);
     }
 }

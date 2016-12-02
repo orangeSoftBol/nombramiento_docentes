@@ -2,7 +2,7 @@
 $dbHost = 'localhost';
 $dbUsername = 'root';
 $dbPassword = '';
-$dbName = 'taller_sistemas_informaticos';
+$dbName = 'nombramiento-docente';
 //connect with the database
 $db = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
 //get search term

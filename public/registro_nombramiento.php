@@ -148,11 +148,22 @@ ul.dropdown-menu {
   </style>
 </head>
 <body>
+     <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#myPage">ORANGESOFT</a>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+             <li><a href="prueba.php"><span class="glyphicon glyphicon-log-in"></span> pagina_anterior</a></li>
+      </ul>
+        </div>
+    </nav>
 
 
 <div class="jumbotron text-center">
   <h1>SISTEMA DE APOYO ADMINISTRATIVO</h1>
   <p>Sistema de apoyo administrativo en el seguimiento y nombramiento de docentes</p>
+    <p>registro nombramiento docentes</p>
 </div>
     <div align="center">
         <div class="container">
@@ -173,7 +184,7 @@ ul.dropdown-menu {
      <script>
   $(function() {
     $( "#skills" ).autocomplete({
-      source: 'search.php'
+      source: 'search_nombramiento.php'
     });
   });
   </script>

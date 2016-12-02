@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <style>
   .jumbotron {
       background-color: #f4511e;
@@ -145,47 +148,31 @@ ul.dropdown-menu {
   </style>
 </head>
 <body>
+     <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#myPage">ORANGESOFT</a>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+             <li><a href="prueba.php"><span class="glyphicon glyphicon-log-in"></span> pagina_anterior</a></li>
+      </ul>
+        </div>
+    </nav>
 
 
 <div class="jumbotron text-center">
   <h1>SISTEMA DE APOYO ADMINISTRATIVO</h1>
   <p>Sistema de apoyo administrativo en el seguimiento y nombramiento de docentes</p>
+    <p>registro nombramiento de docentes</p>
 </div>
     <div align="center">
         <div class="container">
-        <form class="form" role="form" method="post" action="registro.php"> 
+        <form class="form-group" role="form" method="post" > 
             <div class="form-group">
-                <label>Codigo ID</label>
-                <input type="text" name="nombre" class="form-control" required="" placeholder="Nombre completo" id="nombre">
+                <label>Ingresar nombre completo</label>
+                <input type="text" name="nombre" class="form-control" required="" placeholder="Nombre completo" id="skills">
             </div>
             <br>
-            <div class="form-group">
-                <label>Nombre</label>
-                <input type="text" name="apellido" class="form-control" required="" placeholder="Apellido completo"id="apellido">
-            </div>
-            <br>
-             <div class="form-group">
-                 <label>Sigla</label>
-                <input type="e-mail" name="e-mail" class="form-control" required="" placeholder="E-mail"id="e-mail">
-            </div>
-            <br>
-            <div class="form-group">
-                <label>Tipo</label>
-                <input type="password" name="contraseña" class="form-control" required="" placeholder="contraseña" id="contraseña">
-            </div>
-            <div class="form-group row">
-                    <label for="" class="col-md-2 col-form-label">Estado</label>
-                    
-                        <select name="lista_estado" id="lista_estado" class="form-control">
-                            <option value="estado">--ESTADO--</option>
-                            <option value="activo">Activo</option>
-                            <option value="suspendido">Suspendido</option>
-                        </select>
-                    
-                </div>
-            <div class="boton">
-              <input type="submit" name="Submit" value="REGISTRAR" class="btn btn-lg btn-success btn-block">
-            </div>
             
         </form>
     </div>
@@ -194,49 +181,12 @@ ul.dropdown-menu {
     
     
     
-    <?php     //start php tag
-//include connect.php page for database connection
-Include('connect.php');
-//if submit is not blanked i.e. it is clicked.
-if (isset($_REQUEST['Submit'])) //here give the name of your button on which you would like    //to perform action.
-{
-// here check the submitted text box for null value by giving there name.
-	if($_REQUEST['nombre']=="" || $_REQUEST['apellido']=="" || $_REQUEST['e-mail']=="" || $_REQUEST['usuario']=="" || $_REQUEST['contraseña']=="")
-	{
-	echo " Field must be filled";
-	}
-	else
-	{
-	   $sql12= "select * from secretaria where usuario= '".$_REQUEST['usuario']."' &&  password ='".$_REQUEST['contraseña']."'";
-	  $result=mysql_query($sql12)
-	    or exit("Sql Error".mysql_error());
-	   $num_rows=mysql_num_rows($result);
-	   if($num_rows>0)
-	   {
-//here you can redirect on your file which you want to show after login just change filename ,give it to your filename.
-		    ?>
-<script type="text/javascript">
-    alert("ya tiene registrado el docente y la contrase;a");
-</script>
-<?php
- //OR just simply print a message.
-         //Echo "You have logged in successfully";	
-        }
-	    else
-		{
-			 $sql1= mysql_query("INSERT INTO secretaria (idUsuario,nombre,apellido,direccion_electronica,usuario,password) VALUES ( NULL,'".$_REQUEST['nombre']."','".$_REQUEST['apellido']."','".$_REQUEST['e-mail']."','".$_REQUEST['usuario']."','".$_REQUEST['contraseña']."' )");
-           
-                 ?>
-<script type="text/javascript">
-    alert("se ha registrado exitosamente");
-</script>
-<?php
-                
-                
-            
-		}
-	}
-}	
-?>
+     <script>
+  $(function() {
+    $( "#skills" ).autocomplete({
+      source: 'search_seguimiento.php'
+    });
+  });
+  </script>
 </body>
 </html>

@@ -40,17 +40,22 @@ class DocenteController extends Controller
     {
         //
         $docente = new Docente();
+        $docente->docente_id = $request->id;
         $docente->nombre = $request->nombre;
         $docente->apellido_paterno = $request->apellido_paterno;
         $docente->apellido_materno = $request->apellido_materno;
+        $docente->ci = $request->ci;
         $docente->estado = $request->lista_estado;
         $docente->tiempo = $request->lista_tiempo;
-        $docente->titulo = $request->titulo;
-        $docente->diploma = $request->diploma;
+        //$docente->titulo = $request->titulo;
+        $docente->diploma = $request->lista_diploma;
         //titulo
         //diploma
 
         $docente->save();
+        return redirect("prueba.php");
+        //alert("Registro exitoso");
+        //return redirect("docente.html");
     }
 
     /**

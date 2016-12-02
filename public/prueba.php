@@ -41,15 +41,7 @@
       height: 100%;
       margin-bottom: 10px;
   }
-  .carousel-control.right, .carousel-control.left {
-      background-image: none;
-      color: #f4511e;
-  }
-  .carousel-indicators li {
-      border-color: #f4511e;
-  }
-  .carousel-indicators li.active {
-      background-color: #f4511e;
+  
   }
   .item h4 {
       font-size: 19px;
@@ -161,24 +153,24 @@ ul.dropdown-menu {
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">NOMBRAMIENTO<span class="caret"></span></a>
              <ul class="dropdown-menu">
                  <li><a href="#">MODIFICACION</a></li>
-                 <li><a href="nombramiento%20docente.php">REGISTRO</a></li>
+                 <li><a href="registro_nombramiento.php">REGISTRO</a></li>
             
             </ul>
           </li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SEGUIMIENTO<span class="caret"></span></a>
              <ul class="dropdown-menu">
-                 <li><a href="#">MODIDFICACION</a></li>
-                 <li><a href="seguimiento%20docente.php">REGISTRO</a></li>
+                 <li><a href="busqueda_docente_formulario_seguimiento.php">MODIDFICACION</a></li>
+                 <li><a href="registro_seguimiento.php">REGISTRO</a></li>
             
             </ul>
           </li>
         <li><a href="#portfolio">REPORTES</a></li>
         <li><a href="#pricing">HISTORICOS</a></li>
-          <li><a href="docente.html">REGISTRAR DOCENTE</a></li>
-          <li><a href="reguistrar%20materia.php">REGISTRAR MATERIA</a></li>
+          <li><a href="docente.php">REGISTRAR DOCENTE</a></li>
+          <li><a href="reguistrar_materia.php">REGISTRAR MATERIA</a></li>
       </ul>
          <ul class="nav navbar-nav navbar-right">
-             <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> E-mail</a></li>
+             <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> cerrar_sesion</a></li>
       </ul>
     </div>
   </div>

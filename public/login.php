@@ -99,7 +99,7 @@ if (isset($_REQUEST['Submit'])) //here give the name of your button on which you
 	}
 	else
 	{
-	   $sql1= "select * from secretaria where usuario= '".$_REQUEST['user_id']."' &&  password ='".$_REQUEST['password']."'";
+	   $sql1= "select * from usuario_secretaria where NOMBRE_SECRETARIA= '".$_REQUEST['user_id']."' &&  PASSWORD ='".$_REQUEST['password']."'";
 	  $result=mysql_query($sql1)
 	    or exit("Sql Error".mysql_error());
 	    $num_rows=mysql_num_rows($result);

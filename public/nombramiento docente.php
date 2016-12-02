@@ -10,9 +10,6 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <style>
   .jumbotron {
       background-color: #f4511e;
@@ -156,13 +153,15 @@ ul.dropdown-menu {
 </div>
     <div align="center">
         <div class="container">
-        <form class="form-group" role="form" method="post" action="registro.php"> 
+        <form class="form" role="form" method="post" action="registro.php"> 
             <div class="form-group">
                 <label>Ingresar nombre completo</label>
-                <input type="text" name="nombre" class="form-control" required="" placeholder="Nombre completo" id="skills">
+                <input type="text" name="nombre" class="form-control" required="" placeholder="Nombre completo" id="nombre">
             </div>
             <br>
-            
+            <div class="boton">
+              <input type="submit" name="Submit" value="BUSCAR DOCENTE" class="btn btn-lg btn-success btn-block">
+            </div>
         </form>
     </div>
 
@@ -170,12 +169,49 @@ ul.dropdown-menu {
     
     
     
-     <script>
-  $(function() {
-    $( "#skills" ).autocomplete({
-      source: 'search.php'
-    });
-  });
-  </script>
+    <?php     //start php tag
+//include connect.php page for database connection
+Include('connect.php');
+//if submit is not blanked i.e. it is clicked.
+if (isset($_REQUEST['Submit'])) //here give the name of your button on which you would like    //to perform action.
+{
+// here check the submitted text box for null value by giving there name.
+	if($_REQUEST['nombre']=="" || $_REQUEST['apellido']=="" || $_REQUEST['e-mail']=="" || $_REQUEST['usuario']=="" || $_REQUEST['contraseña']=="")
+	{
+	echo " Field must be filled";
+	}
+	else
+	{
+	   $sql12= "select * from secretaria where usuario= '".$_REQUEST['usuario']."' &&  password ='".$_REQUEST['contraseña']."'";
+	  $result=mysql_query($sql12)
+	    or exit("Sql Error".mysql_error());
+	   $num_rows=mysql_num_rows($result);
+	   if($num_rows>0)
+	   {
+//here you can redirect on your file which you want to show after login just change filename ,give it to your filename.
+		    ?>
+<script type="text/javascript">
+    alert("ya tiene registrado el docente y la contrase;a");
+</script>
+<?php
+ //OR just simply print a message.
+         //Echo "You have logged in successfully";	
+        }
+	    else
+		{
+			 $sql1= mysql_query("INSERT INTO secretaria (idUsuario,nombre,apellido,direccion_electronica,usuario,password) VALUES ( NULL,'".$_REQUEST['nombre']."','".$_REQUEST['apellido']."','".$_REQUEST['e-mail']."','".$_REQUEST['usuario']."','".$_REQUEST['contraseña']."' )");
+           
+                 ?>
+<script type="text/javascript">
+    alert("se ha registrado exitosamente");
+</script>
+<?php
+                
+                
+            
+		}
+	}
+}	
+?>
 </body>
 </html>

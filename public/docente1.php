@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>sistema de apoyo administrativo</title>
-  <meta charset="utf-8">
+    <title>Registro Docente</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" rel="stylesheet">
     <script src="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
-     <script type="text/javascript" src="js/validator_usuario.js"></script>
+     <script type="text/javascript" src="js/validator_docente.js"></script>
     
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -148,9 +148,10 @@ ul.dropdown-menu {
     }
   }
   </style>
-</head>
-<body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+
+ </head>
+ <body>
+      <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#myPage">ORANGESOFT</a>
@@ -160,71 +161,111 @@ ul.dropdown-menu {
       </ul>
         </div>
     </nav>
-      
-
-
 <div class="jumbotron text-center">
   <h1>SISTEMA DE APOYO ADMINISTRATIVO</h1>
   <p>Sistema de apoyo administrativo en el seguimiento y nombramiento de docentes</p>
-    <h2> Registro Secretaria </h2>
+    <h2> Registro Docente </h2>
 </div>
       <div align="center">
-    <form action="registro" method="post" role="form" id="usuario-form" class="form-horizontal">
-    <div class="form-group">
-        <label class="col-form-label col-xs-3">Email:</label>
-        <div class="col-xs-9">
-            <input type="text" class="form-control" id="e_mail"name="e_mail" placeholder="Email">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-form-label col-xs-3">Contraseña:</label>
-        <div class="col-xs-9">
-            <input type="text" class="form-control" id="password"name="password" placeholder="password">
-        </div>
-    </div>
-    
-    <div class="form-group">
-        <label class="col-form-label col-xs-3">Nombre:</label>
-        <div class="col-xs-9">
-            <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-form-label col-xs-3">Apellido:</label>
-        <div class="col-xs-9">
-            <input type="text" class="form-control" id="apellido_usuario"name="apellido_usuario"placeholder="Apellido">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-form-label col-xs-3" >Telefono:</label>
-        <div class="col-xs-9">
-            <input type="tel" class="form-control" id="telefono_usuario"name="telefono_usuario"placeholder="Telefono">
-        </div>
-    </div>
-   
-    
-    <br>
-          <div class="boton">
+ 
+    <div>
+         <form action="docente" method="post" role="form" id="docente-form" class="form-horizontal">
+             <div class="form-group">
+                 <label class="col-xs-3 col-form-label">Id docente:</label>
+                 <div class="col-xs-6">
+                     <input type="text" id="id" name="id" class="form-control">
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label class="col-xs-3 col-form-label">Nombre:</label>
+                 <div class="col-xs-6">
+                     <input type="text" id="nombre" name="nombre" class="form-control">
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label class="col-xs-3 col-form-label">Apellido Paterno:</label>
+                 <div class="col-xs-6">
+                     <input type="text" id="apellido_paterno" name="apellido_paterno" class="form-control">
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label class="col-xs-3 col-form-label">Apellido materno:</label>
+                 <div class="col-xs-6">
+                     <input type="text" id="apellido_materno" name="apellido_materno" class="form-control">
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label class="col-xs-3 col-form-label">Documento de Identidad:</label>
+                 <div class="col-xs-6">
+                     <input type="text" id="ci" name="ci" class="form-control">
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label class="col-xs-3 col-form-label">Tiempo:</label>
+                 <div class="col-xs-6">
+                     <select name="lista_tiempo" id="lista_tiempo" class="form-control">
+                         <option value="activo">EXCLUSIVO</option>
+                         <option value="suspendido">PARCIAL</option>
+                     </select>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label class="col-xs-3 col-form-label">Estado:</label>
+                 <div class="col-xs-6">
+                     <select name="lista_estado" id="lista_estado" class="form-control">
+                         <option value="activo">ACTIVO</option>
+                         <option value="suspendido">SUSPENDIDO</option>
+                     </select>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label class="col-xs-3 col-form-label">Titulo:</label>
+                 <div class="col-xs-6">
+                     <select name="titulo" id="titulo" class="form-control">
+                         <option value="activo">ING. ELECTRICO</option>
+                         <option value="suspendido">ING. IMFOMATICO</option>
+                         <option value="suspendido">LIC. EN IDIOMAS</option>
+                         <option value="suspendido">LICENCIADO</option>
+                         <option value="suspendido">INGENIERO</option>
+                          <option value="suspendido">ING. EN SISTEMAS</option>
+                         
+                     </select>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label class="col-xs-3 col-form-label">Diploma:</label>
+                 <div class="col-xs-6">
+                     <select name="diploma" id="diploma" class="form-control">
+                         <option value="activo">ING. ELECTRICO</option>
+                         <option value="suspendido">ING. IMFOMATICO</option>
+                         <option value="suspendido">LIC. EN IDIOMAS</option>
+                         <option value="suspendido">LICENCIADO</option>
+                         <option value="suspendido">INGENIERO</option>
+                          <option value="suspendido">ING. EN SISTEMAS</option>
+                         
+                     </select>
+                 </div>
+             </div>
+              <div class="boton">
               <input type="submit" name="Submit" value="REGISTRAR" class="btn btn-lg btn-success btn-block">
             </div>
-</form>
-             </div>
-       
-      
-   <?php     //start php tag
+         </form>
+     </div>
+ </div>
+      <?php     //start php tag
 //include connect.php page for database connection
 Include('connect.php');
 //if submit is not blanked i.e. it is clicked.
 if (isset($_REQUEST['Submit'])) //here give the name of your button on which you would like    //to perform action.
 {
 // here check the submitted text box for null value by giving there name.
-	if($_REQUEST['nombre_usuario']=="" || $_REQUEST['apellido_usuario']=="" || $_REQUEST['e_mail']=="" || $_REQUEST['password']==""|| $_REQUEST['telefono_usuario']=="")
+	if($_REQUEST['nombre']=="" || $_REQUEST['apellido_materno']=="" || $_REQUEST['apellido_paterno']==""  || $_REQUEST['id']=="" || $_REQUEST['ci']=="")
 	{
 	echo " Field must be filled";
 	}
 	else
 	{
-	   $sql12= "select * from usuario_secretaria where NOMBRE_SECRETARIA= '".$_REQUEST['nombre_usuario']."' &&  PASSWORD ='".$_REQUEST['password']."'";
+	    $sql12= "select * from docente where nombre= '".$_REQUEST['nombre']."' &&  ci ='".$_REQUEST['ci']."'";
 	  $result=mysql_query($sql12)
 	    or exit("Sql Error".mysql_error());
 	   $num_rows=mysql_num_rows($result);
@@ -233,7 +274,7 @@ if (isset($_REQUEST['Submit'])) //here give the name of your button on which you
 //here you can redirect on your file which you want to show after login just change filename ,give it to your filename.
 		    ?>
 <script type="text/javascript">
-    alert("ya tiene registrado a la secretaria  y la contraseña");
+    alert("ya tiene registrado el nombre y el ci");
 </script>
 <?php
  //OR just simply print a message.
@@ -241,20 +282,20 @@ if (isset($_REQUEST['Submit'])) //here give the name of your button on which you
         }
 	    else
 		{
-			 $sql1= mysql_query("INSERT INTO usuario_secretaria (ID_SECRETARIA,E_MAIL,PASSWORD,NOMBRE_SECRETARIA,APELLIDO_SECRETARIA,TELEFONO_SECRETARIA) VALUES ( NULL,'".$_REQUEST['e_mail']."','".$_REQUEST['password']."','".$_REQUEST['nombre_usuario']."','".$_REQUEST['apellido_usuario']."','".$_REQUEST['telefono_usuario']."' )");
+			 $sql1= mysql_query("INSERT INTO docente (docente_id,ci,nombre,apellido_paterno,apellido_materno,estado,titulo,tiempo,diploma) VALUES ( '".$_REQUEST['id']."','".$_REQUEST['ci']."','".$_REQUEST['nombre']."','".$_REQUEST['apellido_paterno']."','".$_REQUEST['apellido_materno']."','".$_REQUEST['lista_estado']."','".$_REQUEST['titulo']."','".$_REQUEST['lista_tiempo']."','".$_REQUEST['diploma']."')");
            
                  ?>
 <script type="text/javascript">
     alert("se ha registrado exitosamente");
 </script>
 <?php
-              
+                
+                
             
 		}
 	}
 }	
-?>             
-  
-</body>
-</html>
-
+?>
+     
+ </body>
+ </html>
