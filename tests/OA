@@ -1,0 +1,54 @@
+[33mcommit 1f377cb03f4f11a7eaa10481c88cdf131196e883[m
+Author: Ivan Ulaque <ivanuc19@gmail.com>
+Date:   Thu Dec 15 20:40:53 2016 -0400
+
+    prueba git
+
+[33mcommit c1f026d38ed24f2ac3ef463ea952199015ac91ba[m
+Author: Diego Villarroel <Diego Villarroel>
+Date:   Thu Dec 1 23:15:56 2016 -0400
+
+    Features for the third sprint
+
+[33mcommit 443c5c3e3f042840de0faf7944a854bd059e1c7c[m
+Author: Diego Villarroel <Diego Villarroel>
+Date:   Wed Nov 30 00:32:04 2016 -0400
+
+    Pagina de inicio + Login basico + registro de docente
+
+[33mcommit 9de6d683675162d582f6aaf6e5d6c3e3af4bdd6a[m
+Author: Diego Villarroel <Diego Villarroel>
+Date:   Thu Nov 17 00:53:26 2016 -0400
+
+    Registro de Docente, Nombramiento
+
+[33mcommit 1580cbaf91c14481affb60064453a22e68182cdb[m
+Author: Diego Villarroel <Diego Villarroel>
+Date:   Thu Nov 3 04:29:19 2016 -0400
+
+    Realese candidate for first sprint
+
+[33mcommit 57a6bb39aec10d35d5f731c1a853fd137b52f4be[m
+Author: Diego Villarroel <Diego Villarroel>
+Date:   Sun Oct 30 16:40:36 2016 -0400
+
+    first merge
+
+[33mcommit fadc63ff0b16489850cc043992492a6e884a6a47[m
+Merge: ff677e8 04ff860
+Author: Diego Villarroel <Diego Villarroel>
+Date:   Sun Oct 30 16:39:01 2016 -0400
+
+    Merge branch 'master' of https://github.com/orangeSoftBol/nombramiento_docentes
+
+[33mcommit ff677e821913c6979046217edcd649daaba107f6[m
+Author: Diego Villarroel <Diego Villarroel>
+Date:   Sun Oct 30 15:39:50 2016 -0400
+
+    Repositorio vacio con Laravel 5
+
+[33mcommit 04ff860a1cb55f90f7215c8907a8139536b3249c[m
+Author: orangeSoftBol <orangesoft.bol@gmail.com>
+Date:   Thu Oct 20 01:09:45 2016 -0400
+
+    Initial commit
