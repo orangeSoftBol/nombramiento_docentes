@@ -6,7 +6,7 @@ class DataBase extends PDO{
 
     public function __construct() {
         try{
-            parent::__construct('mysql:host=localhost;dbname=nombramiento-docente','root','');
+            parent::__construct('mysql:host=localhost;dbname=taller_sistemas_informaticos','root','');
             parent::setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->exec("set names utf8");
         } catch (Exception $ex) {

@@ -54,10 +54,10 @@
       <form name="form_login" method="post" action="login.php" role="form">
         <fieldset>
           <div class="form-group">
-            <input name="user_id" type="text" id="user_id" class="form-control input-lg" placeholder="Nombre del usuario">
+            <input name="user_id" type="text" id="user_id" class="form-control input-lg" placeholder="Nombre del usuario" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
           </div>
           <div class="form-group">
-            <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Contraseña">
+            <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Contraseña" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
           </div>
           <input type="checkbox" name="remember_me" id="remember_me" checked="checked" class="hidden">
           <div class="row">

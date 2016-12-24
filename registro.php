@@ -9,7 +9,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" rel="stylesheet">
     <script src="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
-     <script type="text/javascript" src="js/validator_materia.js"></script>
+     <script type="text/javascript" src="js/validator_usuario.js"></script>
+    
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -44,7 +45,23 @@
       height: 100%;
       margin-bottom: 10px;
   }
- 
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #f4511e;
+  }
+  .carousel-indicators li {
+      border-color: #f4511e;
+  }
+  .carousel-indicators li.active {
+      background-color: #f4511e;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
   .item span {
       font-style: normal;
   }
@@ -133,7 +150,7 @@ ul.dropdown-menu {
   </style>
 </head>
 <body>
-     <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#myPage">ORANGESOFT</a>
@@ -143,113 +160,101 @@ ul.dropdown-menu {
       </ul>
         </div>
     </nav>
+      
+
+
 <div class="jumbotron text-center">
   <h1>SISTEMA DE APOYO ADMINISTRATIVO</h1>
   <p>Sistema de apoyo administrativo en el seguimiento y nombramiento de docentes</p>
-    <h2> Registro Materia </h2>
+    <h2> Registro Secretaria </h2>
 </div>
       <div align="center">
- 
-    <div>
-         <form action="reguistrar_materia" method="post" role="form" id="materia-form" class="form-horizontal">
-             <div class="form-group">
-                 <label class="col-xs-3 col-form-label">ID materia:</label>
-                 <div class="col-xs-6">
-                     <input type="text" id="id_materia" name="id_materia" class="form-control">
-                 </div>
-             </div>
-             <br>
-             <div class="form-group">
-                 <label class="col-xs-3 col-form-label">Nombre:</label>
-                 <div class="col-xs-6">
-                     <input type="text" id="nombre_materia" name="nombre_materia" class="form-control">
-                 </div>
-             </div>
-             <br>
-             <div class="form-group">
-                 <label class="col-xs-3 col-form-label">Sigla:</label>
-                 <div class="col-xs-6">
-                     <input type="text" id="sigla_materia" name="sigla_materia" class="form-control">
-                 </div>
-             </div>
-             <br>
-             <div class="form-group">
-                 <label class="col-xs-3 col-form-label">Tipo:</label>
-                 <div class="col-xs-6">
-                     <select name="tipo" id="tipo" class="form-control">
-                         <option value="activo">CURRICULAR</option>
-                     </select>
-                 </div>
-             </div>
-             <br>
-             <div class="form-group">
-                 <label class="col-xs-3 col-form-label">Estado:</label>
-                 <div class="col-xs-6">
-                     <select name="estado" id="estado" class="form-control">
-                         <option value="activo">ACTIVO</option>
-                     </select>
-                 </div>
-             </div>
-             <div class="form-group">
-                 <label class="col-xs-3 col-form-label">Estado_seguimiento:</label>
-                 <div class="col-xs-6">
-                     <select name="estado_seguimiento" id="estado_seguimiento" class="form-control">
-                         <option value="activo">SI</option>
-                         <option value="activo">NO</option>
-                     </select>
-                 </div>
-             </div>
-             
-             
-              <div class="boton">
+    <form action="registro" method="post" role="form" id="usuario-form" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-form-label col-xs-3">Email:</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" id="e_mail"name="e_mail" placeholder="Email" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-form-label col-xs-3">Contraseña:</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" id="password"name="password" placeholder="password" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-form-label col-xs-3">Nombre:</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-form-label col-xs-3">Apellido:</label>
+        <div class="col-xs-9">
+            <input type="text" class="form-control" id="apellido_usuario"name="apellido_usuario"placeholder="Apellido" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-form-label col-xs-3" >Telefono:</label>
+        <div class="col-xs-9">
+            <input type="tel" class="form-control" id="telefono_usuario"name="telefono_usuario"placeholder="Telefono">
+        </div>
+    </div>
+   
+    
+    <br>
+          <div class="boton">
               <input type="submit" name="Submit" value="REGISTRAR" class="btn btn-lg btn-success btn-block">
             </div>
-         </form>
-     </div>
- </div>
-    
-    
-    <?php    
+</form>
+             </div>
+       
+      
+   <?php     //start php tag
+//include connect.php page for database connection
 Include('connect.php');
-
-if (isset($_REQUEST['Submit'])) 
+//if submit is not blanked i.e. it is clicked.
+if (isset($_REQUEST['Submit'])) //here give the name of your button on which you would like    //to perform action.
 {
-
-	if($_REQUEST['nombre_materia']=="" || $_REQUEST['id_materia']=="" || $_REQUEST['sigla_materia']=="")
+// here check the submitted text box for null value by giving there name.
+	if($_REQUEST['nombre_usuario']=="" || $_REQUEST['apellido_usuario']=="" || $_REQUEST['e_mail']=="" || $_REQUEST['password']==""|| $_REQUEST['telefono_usuario']=="")
 	{
 	echo " Field must be filled";
 	}
 	else
 	{
-	   $sql12= "select * from materia where nombre= '".$_REQUEST['nombre_materia']."' &&  sigla ='".$_REQUEST['sigla_materia']."'";
+	   $sql12= "select * from usuario_secretaria where NOMBRE_SECRETARIA= '".$_REQUEST['nombre_usuario']."' &&  PASSWORD ='".$_REQUEST['password']."'";
 	  $result=mysql_query($sql12)
 	    or exit("Sql Error".mysql_error());
 	   $num_rows=mysql_num_rows($result);
 	   if($num_rows>0)
 	   {
-
+//here you can redirect on your file which you want to show after login just change filename ,give it to your filename.
 		    ?>
 <script type="text/javascript">
-    alert("ya tiene registrado el el nombre y la sigla");
+    alert("ya tiene registrado a la secretaria  y la contraseña");
 </script>
 <?php
-
+ //OR just simply print a message.
+         //Echo "You have logged in successfully";	
         }
 	    else
 		{
-			 $sql1= mysql_query("INSERT INTO materia (materia_id,nombre,sigla,tipo,estado,seguimiento_nombramiento) VALUES ( '".$_REQUEST['id_materia']."','".$_REQUEST['nombre_materia']."','".$_REQUEST['sigla_materia']."','".$_REQUEST['tipo']."','".$_REQUEST['estado']."','".$_REQUEST['estado_seguimiento']."')");
+			 $sql1= mysql_query("INSERT INTO usuario_secretaria (ID_SECRETARIA,E_MAIL,PASSWORD,NOMBRE_SECRETARIA,APELLIDO_SECRETARIA,TELEFONO_SECRETARIA) VALUES ( NULL,'".$_REQUEST['e_mail']."','".$_REQUEST['password']."','".$_REQUEST['nombre_usuario']."','".$_REQUEST['apellido_usuario']."','".$_REQUEST['telefono_usuario']."' )");
            
                  ?>
 <script type="text/javascript">
     alert("se ha registrado exitosamente");
 </script>
 <?php
-                
-                
+              
             
 		}
 	}
 }	
-?>
+?>             
+  
 </body>
 </html>
+

@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Registro Docente</title>
-    <meta charset="utf-8">
+  <title>sistema de apoyo administrativo</title>
+  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" rel="stylesheet">
     <script src="//oss.maxcdn.com/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
-     <script type="text/javascript" src="js/validator_docente.js"></script>
-    
+     <script type="text/javascript" src="js/validator_materia.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -45,23 +44,7 @@
       height: 100%;
       margin-bottom: 10px;
   }
-  .carousel-control.right, .carousel-control.left {
-      background-image: none;
-      color: #f4511e;
-  }
-  .carousel-indicators li {
-      border-color: #f4511e;
-  }
-  .carousel-indicators li.active {
-      background-color: #f4511e;
-  }
-  .item h4 {
-      font-size: 19px;
-      line-height: 1.375em;
-      font-weight: 400;
-      font-style: italic;
-      margin: 70px 0;
-  }
+ 
   .item span {
       font-style: normal;
   }
@@ -148,85 +131,125 @@ ul.dropdown-menu {
     }
   }
   </style>
-
- </head>
- <body>
+</head>
+<body>
+     <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#myPage">ORANGESOFT</a>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+             <li><a href="prueba.php"><span class="glyphicon glyphicon-log-in"></span> pagina_anterior</a></li>
+      </ul>
+        </div>
+    </nav>
 <div class="jumbotron text-center">
   <h1>SISTEMA DE APOYO ADMINISTRATIVO</h1>
   <p>Sistema de apoyo administrativo en el seguimiento y nombramiento de docentes</p>
-    <h2> Registro Docente </h2>
+    <h2> Registro Materia </h2>
 </div>
       <div align="center">
  
     <div>
-         <form action="docente" method="post" role="form" id="docente-form" class="form-horizontal">
-			 <div class="form-group">
-                 <label class="col-xs-3 col-form-label">Id docente:</label>
+         <form action="reguistrar_materia" method="post" role="form" id="materia-form" class="form-horizontal">
+             <div class="form-group">
+                 <label class="col-xs-3 col-form-label">ID materia:</label>
                  <div class="col-xs-6">
-                     <input type="text" id="id" name="id" class="form-control">
+                     <input type="text" id="id_materia" name="id_materia" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
                  </div>
              </div>
+             <br>
              <div class="form-group">
                  <label class="col-xs-3 col-form-label">Nombre:</label>
                  <div class="col-xs-6">
-                     <input type="text" id="nombre" name="nombre" class="form-control">
+                     <input type="text" id="nombre_materia" name="nombre_materia" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
                  </div>
              </div>
+             <br>
              <div class="form-group">
-                 <label class="col-xs-3 col-form-label">Apellido Paterno:</label>
+                 <label class="col-xs-3 col-form-label">Sigla:</label>
                  <div class="col-xs-6">
-                     <input type="text" id="apellido_paterno" name="apellido_paterno" class="form-control">
+                     <input type="text" id="sigla_materia" name="sigla_materia" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
                  </div>
              </div>
+             <br>
              <div class="form-group">
-                 <label class="col-xs-3 col-form-label">Apellido materno:</label>
+                 <label class="col-xs-3 col-form-label">Tipo:</label>
                  <div class="col-xs-6">
-                     <input type="text" id="apellido_materno" name="apellido_materno" class="form-control">
-                 </div>
-             </div>
-             <div class="form-group">
-                 <label class="col-xs-3 col-form-label">Documento de Identidad:</label>
-                 <div class="col-xs-6">
-                     <input type="text" id="ci" name="ci" class="form-control">
-                 </div>
-             </div>
-             <div class="form-group">
-                 <label class="col-xs-3 col-form-label">Tiempo:</label>
-                 <div class="col-xs-6">
-                     <select name="lista_tiempo" id="lista_tiempo" class="form-control">
-                         <option value="EXCLUSIVO">EXCLUSIVO</option>
-                         <option value="PARCIAL">PARCIAL</option>
+                     <select name="tipo" id="tipo" class="form-control">
+                         <option value="activo">CURRICULAR</option>
                      </select>
                  </div>
              </div>
+             <br>
              <div class="form-group">
                  <label class="col-xs-3 col-form-label">Estado:</label>
                  <div class="col-xs-6">
-                     <select name="lista_estado" id="lista_estado" class="form-control">
-                         <option value="ACTIVO">ACTIVO</option>
-                         <option value="SUSPENDIDO">SUSPENDIDO</option>
+                     <select name="estado" id="estado" class="form-control">
+                         <option value="activo">ACTIVO</option>
                      </select>
                  </div>
              </div>
              <div class="form-group">
-                 <label class="col-xs-3 col-form-label">Diploma:</label>
+                 <label class="col-xs-3 col-form-label">Estado_seguimiento:</label>
                  <div class="col-xs-6">
-                     <select name="lista_diploma" id="lista_diploma" class="form-control">
-                         <option value="ING. ELECTRICO">ING. ELECTRICO</option>
-                         <option value="ING. INFORMATICO">ING. IMFOMATICO</option>
-                         <option value="LIC. EN IDIOMAS">LIC. EN IDIOMAS</option>
-                         <option value="LICENCIADO">LICENCIADO</option>
-                         <option value="INGENIERO">INGENIERO</option>
-                          <option value="ING. EN SISTEMAS">ING. EN SISTEMAS</option>                         
+                     <select name="estado_seguimiento" id="estado_seguimiento" class="form-control">
+                         <option value="activo">SI</option>
+                         <option value="activo">NO</option>
                      </select>
                  </div>
              </div>
+             
+             
               <div class="boton">
               <input type="submit" name="Submit" value="REGISTRAR" class="btn btn-lg btn-success btn-block">
             </div>
          </form>
      </div>
  </div>
-     
- </body>
- </html>
+    
+    
+    <?php    
+Include('connect.php');
+
+if (isset($_REQUEST['Submit'])) 
+{
+
+	if($_REQUEST['nombre_materia']=="" || $_REQUEST['id_materia']=="" || $_REQUEST['sigla_materia']=="")
+	{
+	echo " Field must be filled";
+	}
+	else
+	{
+	   $sql12= "select * from materia where materia_id= '".$_REQUEST['id_materia']."' &&  sigla ='".$_REQUEST['sigla_materia']."'";
+	  $result=mysql_query($sql12)
+	    or exit("Sql Error".mysql_error());
+	   $num_rows=mysql_num_rows($result);
+	   if($num_rows>0)
+	   {
+
+		    ?>
+<script type="text/javascript">
+    alert("ya tiene registrado el el nombre y la sigla");
+</script>
+<?php
+
+        }
+	    else
+		{
+			 $sql1= mysql_query("INSERT INTO materia (materia_id,nombre,sigla,tipo,estado,seguimiento_nombramiento) VALUES ( '".$_REQUEST['id_materia']."','".$_REQUEST['nombre_materia']."','".$_REQUEST['sigla_materia']."','".$_REQUEST['tipo']."','".$_REQUEST['estado']."','".$_REQUEST['estado_seguimiento']."')");
+           
+                 ?>
+<script type="text/javascript">
+    alert("se ha registrado exitosamente");
+</script>
+<?php
+                
+                
+            
+		}
+	}
+}	
+?>
+</body>
+</html>

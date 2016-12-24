@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +11,6 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <style>
   .jumbotron {
       background-color: #f4511e;
@@ -43,15 +41,7 @@
       height: 100%;
       margin-bottom: 10px;
   }
-  .carousel-control.right, .carousel-control.left {
-      background-image: none;
-      color: #f4511e;
-  }
-  .carousel-indicators li {
-      border-color: #f4511e;
-  }
-  .carousel-indicators li.active {
-      background-color: #f4511e;
+  
   }
   .item h4 {
       font-size: 19px;
@@ -122,14 +112,18 @@ ul.dropdown-menu {
       color: #fff !important;
   }
  
-      .form-group{
-          width: 50%;
-          
-      }
-      .boton{
-          width: 20%;
-          
-      }
+       #content {
+                position: static;
+                top: 0px;
+                bottom: 0px;
+                right: 12px;
+                width: 70%;
+            }
+            #main {
+                margin: 0 auto;
+                width: 80%;
+                text-align: right
+            }
       
   .navbar-nav li a:hover, .navbar-nav li.active a {
       color: #f4511e !important;
@@ -148,45 +142,83 @@ ul.dropdown-menu {
   </style>
 </head>
 <body>
-     <nav class="navbar navbar-default navbar-fixed-top">
+
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#myPage">ORANGESOFT</a>
     </div>
-      <ul class="nav navbar-nav navbar-right">
-             <li><a href="prueba.php"><span class="glyphicon glyphicon-log-in"></span> pagina_anterior</a></li>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">NOMBRAMIENTO<span class="caret"></span></a>
+             <ul class="dropdown-menu">
+                 <li><a href="#">MODIFICACION</a></li>
+                 <li><a href="registro_nombramiento.php">REGISTRO</a></li>
+            
+            </ul>
+          </li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SEGUIMIENTO<span class="caret"></span></a>
+             <ul class="dropdown-menu">
+                 <li><a href="busqueda_docente_formulario_seguimiento.php">MODIDFICACION</a></li>
+                 <li><a href="#">REGISTRO</a></li>
+            
+            </ul>
+          </li>
+        <li><a href="#portfolio">REPORTES</a></li>
+        <li><a href="#pricing">HISTORICOS</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">DOCENTE<span class="caret"></span></a>
+             <ul class="dropdown-menu">
+                 <li><a href="registro_docente.php">REGISTRO </a></li>
+                 <li><a href="modificacion_docente.php">MODIFICACION </a></li>
+            
+            </ul>
+          </li>
+          <li><a href="reguistrar_materia.php">REGISTRAR MATERIA</a></li>
       </ul>
-        </div>
-    </nav>
-
+         <ul class="nav navbar-nav navbar-right">
+             <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> cerrar_sesion</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+<!-- Sidenav/menu -->
+<nav class="w3-sidenav w3-collapse w3-white w3-animate-left" style="z-index:3;width:250px;" id="mySidenav">
+    <br>
+  <hr>
+  <div class="w3-container">
+    <h5>APOYO ADMINISTRATIVO</h5>
+  </div>
+  <a href="#" class="w3-padding-4 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+  <a href="registro.php" class="w3-padding"><i class="fa fa-users fa-fw"></i> REGISTRO </a>
+  <a href="#" class="w3-padding"><i class="fa fa-eye fa-fw"></i> inicio</a>
+  <a href="#" class="w3-padding"><i class="fa fa-users fa-fw"></i> manual PDF</a>
+  <a href="#" class="w3-padding"><i class="fa fa-bullseye fa-fw"></i> manual DOC</a>
+  <a href="#" class="w3-padding"><i class="fa fa-diamond fa-fw"></i> contacto</a>
+</nav>
+    
 
 <div class="jumbotron text-center">
   <h1>SISTEMA DE APOYO ADMINISTRATIVO</h1>
   <p>Sistema de apoyo administrativo en el seguimiento y nombramiento de docentes</p>
-    <p>registro nombramiento docentes</p>
+  <form class="form-inline">
+  </form>
 </div>
-    <div align="center">
-        <div class="container">
-        <form class="form-group" role="form" method="post" action="registro.php"> 
-            <div class="form-group">
-                <label>Ingresar nombre completo</label>
-                <input type="text" name="nombre" class="form-control" required="" placeholder="Nombre completo" id="skills">
-            </div>
-            <br>
-            
-        </form>
+ <div id="content">
+            <div id="main">
+   
+   <img src="imagen1.jpg" class="img-circle" alt="Cinque Terre" width="550" height="390" >
+   
+     </div>
     </div>
-
+<!-- Container (Services Section) -->
+<div class="container-fluid text-center">
+    <h2>SISTEMA DE APOYO ADMINISTRATIVO</h2>
+  <h4>Sistema de apoyo administrativo en el seguimiento y nombramiento de docentes</h4>
+    <h>COCHABAMABA-BOLIVIA</h>
     </div>
-    
-    
-    
-     <script>
-  $(function() {
-    $( "#skills" ).autocomplete({
-      source: 'search_nombramiento.php'
-    });
-  });
-  </script>
+  <br>
+  
 </body>
 </html>
+

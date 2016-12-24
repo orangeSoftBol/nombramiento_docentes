@@ -191,7 +191,7 @@ ul.dropdown-menu {
 <div class="jumbotron text-center">
   <h1>SISTEMA DE APOYO ADMINISTRATIVO</h1>
   <p>Sistema de apoyo administrativo en el seguimiento y nombramiento de docentes</p>
-    <h2> modificacion docente </h2>
+    <h2> registrar docente </h2>
 </div>
 	<form class="form-horizontal">
 		<div class="container">
@@ -214,8 +214,10 @@ ul.dropdown-menu {
 	        			    </label>
 	       				 </div>
 	       				 <div class="form-group">
-	       				 	<button type="button" id="boton_buscar" class="btn btn-primary" onclick="buscar()" >BUSCAR</button>
+                             <div align="center">
+	       				 	<button type="button" id="boton_buscar" class="btn btn-primary btn-success" onclick="buscar()" >BUSCAR</button>
 	       				 </div>
+                        </div>
 
 					</div>
 					<div id="tabla_docentes">
@@ -254,10 +256,13 @@ ul.dropdown-menu {
 					</div>
 				</div>
 			</fieldset>
+            <br>
+            <div align="center">
 			<div>
-				<button type="button" name="aceptar" value="ACEPTAR" class="btn-primary btn" onclick="">ACEPTAR</button>
-				<button type="button" id="salir" class="btn btn-primary">SALIR</button>
+				<button type="button" name="aceptar" value="ACEPTAR" class="btn-primary btn-success" onclick="">ACEPTAR</button>
+				
 			</div>
+            </div>
 		</div>
 	</form>
 	<script type="text/javascript">
