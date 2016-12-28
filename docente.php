@@ -173,25 +173,25 @@ ul.dropdown-menu {
              <div class="form-group">
                  <label class="col-xs-3 col-form-label">Id docente:</label>
                  <div class="col-xs-6">
-                     <input type="text" id="id" name="id" class="form-control">
+                     <input type="text" id="id" name="id" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
                  </div>
              </div>
              <div class="form-group">
                  <label class="col-xs-3 col-form-label">Nombre:</label>
                  <div class="col-xs-6">
-                     <input type="text" id="nombre" name="nombre" class="form-control">
+                     <input type="text" id="nombre" name="nombre" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
                  </div>
              </div>
              <div class="form-group">
                  <label class="col-xs-3 col-form-label">Apellido Paterno:</label>
                  <div class="col-xs-6">
-                     <input type="text" id="apellido_paterno" name="apellido_paterno" class="form-control">
+                     <input type="text" id="apellido_paterno" name="apellido_paterno" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
                  </div>
              </div>
              <div class="form-group">
                  <label class="col-xs-3 col-form-label">Apellido materno:</label>
                  <div class="col-xs-6">
-                     <input type="text" id="apellido_materno" name="apellido_materno" class="form-control">
+                     <input type="text" id="apellido_materno" name="apellido_materno" class="form-control" style="text-transform:uppercase;" onkeyup="javascript:this.value=this.value.toUpperCase();">
                  </div>
              </div>
              <div class="form-group">
