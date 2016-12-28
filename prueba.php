@@ -160,7 +160,7 @@ ul.dropdown-menu {
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SEGUIMIENTO<span class="caret"></span></a>
              <ul class="dropdown-menu">
                  <li><a href="busqueda_docente_formulario_seguimiento.php">MODIDFICACION</a></li>
-                 <li><a href="#">REGISTRO</a></li>
+                 <li><a href="registro_seguimiento.php">REGISTRO</a></li>
             
             </ul>
           </li>
