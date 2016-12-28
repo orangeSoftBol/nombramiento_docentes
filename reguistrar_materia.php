@@ -215,13 +215,13 @@ Include('connect.php');
 if (isset($_REQUEST['Submit'])) 
 {
 
-	if($_REQUEST['nombre_materia']=="" || $_REQUEST['id_materia']=="" || $_REQUEST['sigla_materia']=="")
+	if($_REQUEST['nombre_materia']=="" && $_REQUEST['id_materia']=="")
 	{
 	echo " Field must be filled";
 	}
 	else
 	{
-	   $sql12= "select * from materia where materia_id= '".$_REQUEST['id_materia']."' &&  sigla ='".$_REQUEST['sigla_materia']."'";
+	   $sql12= "select * from materia where materia_id= '".$_REQUEST['id_materia']."'";
 	  $result=mysql_query($sql12)
 	    or exit("Sql Error".mysql_error());
 	   $num_rows=mysql_num_rows($result);
@@ -230,7 +230,7 @@ if (isset($_REQUEST['Submit']))
 
 		    ?>
 <script type="text/javascript">
-    alert("ya tiene registrado el el nombre y la sigla");
+    alert("ya tiene registrado el id de la materia");
 </script>
 <?php
 
