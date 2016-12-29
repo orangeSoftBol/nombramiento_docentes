@@ -239,9 +239,105 @@ if (isset($_GET['nomDoc'])) {
 	<script src="js/bootstrap.min.js"></script>
 
            <!-- Primera columna-->
-          
 
-<!-- termina segunda columna-->
+  <!-- inicio del panel de registro a detalle de horarios en el formulario-->
+
+  <div class="panel panel-primary">
+	  <div class="panel-heading">
+		  <h3 class="panel-title">Materia Agregada</h3>
+	  </div>
+	  <div class="panel-body">
+		  <div class="container">
+			  <div class="row">
+				  <div class="col-md-4">
+					  <div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">Grupo</span>
+						  <input type="text" placeholder="1" aria-describedby="basic-addon1">
+					  </div>
+				  </div>
+				  <div class="col-md-4">
+					  <div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">Facultad</span>
+						  <input type="text" placeholder="CIENCIAS Y TECNOLOGIA" aria-describedby="basic-addon1">
+					  </div>
+				  </div>
+				  <div class="col-md-4">
+					  <div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">Departamento</span>
+						  <input type="text" placeholder="INFORMATICA-SISTEMAS" aria-describedby="basic-addon1">
+					  </div>
+				  </div>
+			  </div>
+			  <div class="row">
+				  <label class="col-md-2 col-form-label">Carrera:</label>
+				  <div class="col-md-2">
+					  <select class="form-control">
+						  <option>INFORMATICA</option>
+						  <option>SISTEMAS</option>
+					  </select>
+				  </div>
+				  <label class="col-md-2 col-form-label">Tipo:</label>
+				  <div class="col-md-2">
+					  <select class="form-control">
+						  <option>INVITADO</option>
+						  <option>TITULAR</option>
+					  </select>
+				  </div>
+				  <div class="col-md-4">
+					  <div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">Nro. Alumnos</span>
+						  <input type="NUMBER" aria-describedby="basic-addon1">
+					  </div>
+				  </div>
+			  </div>
+			  <div class="row">
+				  <label class="col-md-1 col-form-label">Dia:</label>
+				  <div class="col-md-1">
+					  <select class="form-control">
+						  <option>Lunes</option>
+						  <option>Martes</option>
+						  <option>Miercoles</option>
+						  <option>Jueves</option>
+						  <option>Viernes</option>
+						  <option>Sabado</option>
+					  </select>
+				  </div>
+				  <div class="col-md-2">
+					  <div class="input-group">
+						  <span class="input-group-addon" id="basic-addon1">Aula</span>
+						  <input type="text" aria-describedby="basic-addon1">
+					  </div>
+				  </div>
+				  <div class="col-md-2">
+					  <button type="button" class="btn btn-default">-></button>
+				  </div>
+				  <div class="col-md-6">
+					  <table class="table">
+						  <thead>
+						  <tr>
+							  <th>RANGO</th>
+							  <th>LU</th>
+							  <th>MA</th>
+							  <th>MI</th>
+							  <th>JU</th>
+							  <th>VI</th>
+							  <th>SA</th>
+						  </tr>
+						  </thead>
+						  <tbody>
+						  </tbody>
+					  </table>
+				  </div>
+			  </div>
+		  </div>
+	  </div>
+  </div>
+
+  <!-- final de panel de registro a detalle de horarios en el formulario-->
+
+
+
+	  <!-- termina segunda columna-->
             <div class="col-xs-4">
                       <label class="control-label col-xs-7">Hrs. Semana</label>
                       <div class="col-xs-4">
