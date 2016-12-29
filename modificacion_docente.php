@@ -8,16 +8,16 @@
 		
 		if ($_GET['nomAp'] == 0) {
 	
-			$sth = $objData->prepare('SELECT D.APE_PATERNO, D.APE_MATERNO, D.NOMBRE2, D.CODIGO2 FROM docente1 D WHERE D.NOMBRE2 LIKE :nombre');
+			$sth = $objData->prepare('SELECT D.APE_PATERNO, D.APE_MATERNO, D.NOMBRE2, D.CODIGO2 FROM docente D WHERE D.NOMBRE2 LIKE :nombre');
 			$sth->bindParam(':nombre',$r);
 
 		} else {
-			$sth = $objData->prepare('SELECT D.APE_PATERNO, D.APE_MATERNO, D.NOMBRE2, D.CODIGO2 FROM docente1 D WHERE D.APE_PATERNO LIKE :apellido');
+			$sth = $objData->prepare('SELECT D.APE_PATERNO, D.APE_MATERNO, D.NOMBRE2, D.CODIGO2 FROM docente D WHERE D.APE_PATERNO LIKE :apellido');
 			$sth->bindParam(':apellido', $r);
 		}
 
 	} else {
-		$sth = $objData->prepare('SELECT D.APE_PATERNO, D.APE_MATERNO, D.NOMBRE2, D.CODIGO2 FROM docente1 D');
+		$sth = $objData->prepare('SELECT D.APE_PATERNO, D.APE_MATERNO, D.NOMBRE2, D.CODIGO2 FROM docente D');
 		
 	}
 	$sth->execute();
@@ -47,7 +47,7 @@
   .jumbotron {
       background-color: #f4511e;
       color: #fff;
-      padding: 38px 25px;
+      padding: 10px 25px;
   }
   .container-fluid {
       padding: 5px 10px;
@@ -192,8 +192,8 @@ ul.dropdown-menu {
         </div>
     </nav>
 <div class="jumbotron text-center">
-  <h1>SISTEMA DE APOYO ADMINISTRATIVO</h1>
-  <p>Sistema de apoyo administrativo en el seguimiento y nombramiento de docentes</p>
+     <br>
+     <br>
     <h2> modificacion docente </h2>
 </div>
                   
@@ -206,7 +206,7 @@ ul.dropdown-menu {
                 
 				<div class="well">
                   <div align="center">
-                  <label  class="">Criterio de busqueda:</label>
+                  <label  class="">Buscar Docente:</label>
               <input type="text" name="criterio" id="cr" class="">
                   <button type="button" id="boton_buscar" class="btn btn-primary btn-success" onclick="buscar()" >BUSCAR</button>
                  </div>
@@ -268,23 +268,83 @@ ul.dropdown-menu {
 				</div>
 			</fieldset>
             <br>
-            <div align="center">
-			<div class = "container"
-      >
-         <a href="#" class="btn btn-primary btn-lg>">Modificar</a>
-				
-				
-			</div>
-            </div>
+            
 		</div>
+    
+
 	</form>
+
+    <div class="container"> 
+
+    <div class="modal fade" id="ventana" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+              <form name="form2" method="post" action="" >
+            <div class="modal-header">
+             <br><br>
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span></button>
+              <h4 class="modal-title" id="ModalLabel">MODIFCAR DOCENTE</h4>
+            </div>
+ 
+            <div class="modal-body">
+             
+               <div class="row-fluid">
+                                    <div class="">
+                                        <strong>CI</strong><br>
+                                        <input type="text" name="doc" autocomplete="off" readonly value=""><br>
+                                        <strong>Nombre </strong><br>
+                                        <input type="text" name="nom" autocomplete="off" required value=""><br>
+                                        <strong>Apellido Paterno</strong><br>
+                                        <input type="text" name="ape" autocomplete="off" required value=""><br>
+                                        <strong>Apellido Materno</strong><br>
+                                        <input type="text" name="especialidad" autocomplete="off" required value=""><br>
+                                        
+                                        <strong>Estado</strong><br>
+                                        <select name="estado">
+                                            <option value="s" >Activo</option>
+                                            <option value="n" >No Activo</option>
+                                        </select>
+                                    </div>
+                                    <div class="">
+                                        <strong>titulo</strong><br>
+                                        <input type="text" name="dir" autocomplete="off" required value=""><br>
+                                        <strong>Tiempo</strong><br>
+                                        <input type="text" name="tel" autocomplete="off" value=""><br>
+                                        <strong>Diplomas</strong><br>
+                                        <input type="text" name="cel" autocomplete="off" required value=""><br>
+                                        
+                                        
+                                    </div>
+                                </div>
+            </div>
+ 
+ 
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Guardar cambios</button>
+             
+            </div>
+           </form>
+ 
+          </div>
+        </div>
+      </div>
+ 
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#ventana">MODIFICAR</button>
+ 
+  
+ 
+
+ 
+  </div>
+ 
 	<script type="text/javascript">
 		function muestra(ObjetoTR){
 			var nombre = ObjetoTR.cells[0].childNodes[0].nodeValue;
 			var apellidoPat = ObjetoTR.cells[1].childNodes[0].nodeValue;
 			var apellidoMat = ObjetoTR.cells[2].childNodes[0].nodeValue;
 			document.getElementById("res_b").value = nombre + " " + apellidoPat + " " + apellidoMat;
-			//window.location.href = 'http://localhost/Modificacion%20nombramiento%20docente/busqueda_docente_formulario_seguimiento.php?nom'+nombre+'apeP='+apellidoPat+'apeM='+apellidoMat;
+			
 		}
 
 		function buscar(){ 
@@ -312,7 +372,7 @@ ul.dropdown-menu {
 
 				} else {
 					//alert("bien");
-					window.location.href = 'busqueda_docente_formulario_seguimiento.php?criterio='+crit+'&nomAp='+i;
+					window.location.href = 'modificacion_docente.php?criterio='+crit+'&nomAp='+i;
 				}
 			}
 		}		

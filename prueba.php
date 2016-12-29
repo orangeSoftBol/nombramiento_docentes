@@ -171,7 +171,13 @@ ul.dropdown-menu {
           </li>
         <li><a href="#portfolio">REPORTES</a></li>
         <li><a href="#pricing">HISTORICOS</a></li>
-          <li><a href="docente.php">REGISTRAR DOCENTE</a></li>
+           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">DOCENTE<span class="caret"></span></a>
+             <ul class="dropdown-menu">
+                 <li><a href="registro_docente.php">REGISTRO </a></li>
+                 <li><a href="modificacion_docente.php">MODIFICACION </a></li>
+            
+            </ul>
+          </li>
           <li><a href="reguistrar_materia.php">REGISTRAR MATERIA</a></li>
       </ul>
          <ul class="nav navbar-nav navbar-right">
