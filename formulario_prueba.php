@@ -180,6 +180,178 @@ if (isset($_GET['nomDoc'])) {
 				            <input type="text" name="otro_cargo" class="">
 				        </div>
 				    </div>
+
+				    <!--Asignacion de periodos al horario.-->
+				    <fieldset class="form-group col-xs-4">
+					<legend>HORARIO:</legend>
+						<div class="form-group">
+							<div class="col-xs-6 form-group">
+								<label class="control-label">Día</label>
+								<select class="form-control" name="dia-horario" id="dia-horario">
+									<option>--</option>
+									<option>LUNES</option>
+									<option>MARTES</option>
+									<option>MIERCOLES</option>
+									<option>JUEVES</option>
+									<option>VIERNES</option>
+									<option>SABADO</option>
+								</select>
+							</div>
+							<div class="form-group col-xs-6">
+								<label class="control-label">HORA INICIO</label>
+								<select class="form-control" name="hora-inicio-horario" id="hora-inicio">
+									<option>--</option>
+									<option>06:45</option>
+									<option>08:15</option>
+									<option>09:45</option>
+									<option>11:15</option>
+									<option>12:45</option>
+									<option>14:15</option>
+									<option>15:45</option>
+									<option>17:15</option>
+									<option>19:45</option>
+									<option>20:15</option>
+								</select>
+							</div>
+							<div class="col-xs-6 form-group">
+								<label class="control-label">HORA FIN</label>
+								<select class="form-control" name="hora-fin-horario">
+									<option>--</option>
+									<option>08:15</option>
+									<option>09:45</option>
+									<option>11:15</option>
+									<option>12:45</option>
+									<option>14:15</option>
+									<option>15:45</option>
+									<option>17:15</option>
+									<option>19:45</option>
+									<option>20:15</option>
+									<option>21:45</option>
+								</select>
+							</div>
+							<div class="col-xs-6 form-group">
+								<label class="control-label ">AULA</label>
+								<input type="text" name="aula" class="form-control">
+							</div>
+						</div>
+					</fieldset>
+					<br>
+					<br>
+					<div class="form-group col-xs-6">
+						<button type="button" class="btn btn-primary" onclick="anadirPeriodoMateria()">AGREGAR</button>
+					</div>
+					<div class="form-group col-xs-6">
+						<button type="button" class="btn btn-primary">QUITAR</button>
+					</div>
+				    <div>
+				    	<table class="table table-bordered" id="horario">
+						    	<thead>
+						    		<tr>
+						        		<th>RANGO</th>
+							        	<th>LUN</th>
+							        	<th>MAR</th>
+							        	<th>MIE</th>
+							        	<th>JUE</th>
+							        	<th>VIE</th>
+							        	<th>SAB</th>
+						      		</tr>
+						   		</thead>
+						   		<tbody>
+						   	   		<tr>
+						        		<td>06:45</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						        		<td>--</td>
+						        		<td>--</td>
+						 	     	</tr>
+						 	     	<tr>
+						        		<td>08:15</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						        		<td>--</td>
+						        		<td>--</td>
+						 	     	</tr>
+						 	     	<tr>
+						        		<td>09:45</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						        		<td>--</td>
+						        		<td>--</td>
+						 	     	</tr>
+						 	     	<tr>
+						        		<td>11:15</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						        		<td>--</td>
+						        		<td>--</td>
+						 	     	</tr>
+						 	     	<tr>
+						        		<td>12:45</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						        		<td>--</td>
+						        		<td>--</td>
+						 	     	</tr>
+						 	     	<tr>
+						        		<td>14:15</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						        		<td>--</td>
+						        		<td>--</td>
+						 	     	</tr>
+						 	     	<tr>
+						        		<td>15:45</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						        		<td>--</td>
+						        		<td>--</td>
+						 	     	</tr>
+						 	     	<tr>
+						        		<td>17:15</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						        		<td>--</td>
+						        		<td>--</td>
+						 	     	</tr>
+						 	     	<tr>
+						        		<td>18:45</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						        		<td>--</td>
+						        		<td>--</td>
+						 	     	</tr>
+						 	     	<tr>
+						        		<td>20:15</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						    	    	<td>--</td>
+						        		<td>--</td>
+						        		<td>--</td>
+						 	     	</tr>
+						      	
+						    	</tbody>
+							</table>
+				    </div>
+				    
                     </div>
                  </div>
 				</form>
@@ -234,6 +406,173 @@ if (isset($_GET['nomDoc'])) {
 		function eliminarMateria() {
 			var x = document.getElementById("materias_asignadas");
    			x.remove(x.selectedIndex);
+		}
+
+		function anadirPeriodoMateria() {
+			var hora = document.getElementById("hora-inicio").value;
+			var dia = document.getElementById("dia-horario").value;
+			//document.getElementById("horario").rows[3].cells[3].innerHTML = "X";
+			//alert(hora+dia);
+			switch (hora) {
+				case "06:45": 
+				switch (dia) {
+					case "LUNES": document.getElementById("horario").rows[1].cells[1].innerHTML = "X";
+					break;
+					case "MARTES": document.getElementById("horario").rows[1].cells[2].innerHTML = "X";
+					break;
+					case "MIERCOLES": document.getElementById("horario").rows[1].cells[3].innerHTML = "X";
+					break;
+					case "JUEVES": document.getElementById("horario").rows[1].cells[4].innerHTML = "X";
+					break;
+					case "VIERNES": document.getElementById("horario").rows[1].cells[5].innerHTML = "X";
+					break;
+					case "SABADO": document.getElementById("horario").rows[1].cells[6].innerHTML = "X";
+					break;
+				}
+				break;
+				case "08:15": 
+				switch (dia) {
+					case "LUNES": document.getElementById("horario").rows[2].cells[1].innerHTML = "X";
+					break;
+					case "MARTES": document.getElementById("horario").rows[2].cells[2].innerHTML = "X";
+					break;
+					case "MIERCOLES": document.getElementById("horario").rows[2].cells[3].innerHTML = "X";
+					break;
+					case "JUEVES": document.getElementById("horario").rows[2].cells[4].innerHTML = "X";
+					break;
+					case "VIERNES": document.getElementById("horario").rows[2].cells[5].innerHTML = "X";
+					break;
+					case "SABADO": document.getElementById("horario").rows[2].cells[6].innerHTML = "X";
+					break;
+				}
+				break;
+				case "09:45": 
+				switch (dia) {
+					case "LUNES": document.getElementById("horario").rows[3].cells[1].innerHTML = "X";
+					break;
+					case "MARTES": document.getElementById("horario").rows[3].cells[2].innerHTML = "X";
+					break;
+					case "MIERCOLES": document.getElementById("horario").rows[3].cells[3].innerHTML = "X";
+					break;
+					case "JUEVES": document.getElementById("horario").rows[3].cells[4].innerHTML = "X";
+					break;
+					case "VIERNES": document.getElementById("horario").rows[3].cells[5].innerHTML = "X";
+					break;
+					case "SABADO": document.getElementById("horario").rows[3].cells[6].innerHTML = "X";
+					break;
+				}
+				break;
+				case "11:15": 
+				switch (dia) {
+					case "LUNES": document.getElementById("horario").rows[4].cells[1].innerHTML = "X";
+					break;
+					case "MARTES": document.getElementById("horario").rows[4].cells[2].innerHTML = "X";
+					break;
+					case "MIERCOLES": document.getElementById("horario").rows[4].cells[3].innerHTML = "X";
+					break;
+					case "JUEVES": document.getElementById("horario").rows[4].cells[4].innerHTML = "X";
+					break;
+					case "VIERNES": document.getElementById("horario").rows[4].cells[5].innerHTML = "X";
+					break;
+					case "SABADO": document.getElementById("horario").rows[4].cells[6].innerHTML = "X";
+					break;
+				}
+				break;
+				case "12:45": 
+				switch (dia) {
+					case "LUNES": document.getElementById("horario").rows[5].cells[1].innerHTML = "X";
+					break;
+					case "MARTES": document.getElementById("horario").rows[5].cells[2].innerHTML = "X";
+					break;
+					case "MIERCOLES": document.getElementById("horario").rows[5].cells[3].innerHTML = "X";
+					break;
+					case "JUEVES": document.getElementById("horario").rows[5].cells[4].innerHTML = "X";
+					break;
+					case "VIERNES": document.getElementById("horario").rows[5].cells[5].innerHTML = "X";
+					break;
+					case "SABADO": document.getElementById("horario").rows[5].cells[6].innerHTML = "X";
+					break;
+				}
+				break;
+				case "14:15": 
+				switch (dia) {
+					case "LUNES": document.getElementById("horario").rows[6].cells[1].innerHTML = "X";
+					break;
+					case "MARTES": document.getElementById("horario").rows[6].cells[2].innerHTML = "X";
+					break;
+					case "MIERCOLES": document.getElementById("horario").rows[6].cells[3].innerHTML = "X";
+					break;
+					case "JUEVES": document.getElementById("horario").rows[6].cells[4].innerHTML = "X";
+					break;
+					case "VIERNES": document.getElementById("horario").rows[6].cells[5].innerHTML = "X";
+					break;
+					case "SABADO": document.getElementById("horario").rows[6].cells[6].innerHTML = "X";
+					break;
+				}
+				break;
+				case "15:45": 
+				switch (dia) {
+					case "LUNES": document.getElementById("horario").rows[7].cells[1].innerHTML = "X";
+					break;
+					case "MARTES": document.getElementById("horario").rows[7].cells[2].innerHTML = "X";
+					break;
+					case "MIERCOLES": document.getElementById("horario").rows[7].cells[3].innerHTML = "X";
+					break;
+					case "JUEVES": document.getElementById("horario").rows[7].cells[4].innerHTML = "X";
+					break;
+					case "VIERNES": document.getElementById("horario").rows[7].cells[5].innerHTML = "X";
+					break;
+					case "SABADO": document.getElementById("horario").rows[7].cells[6].innerHTML = "X";
+					break;
+				}
+				break;
+				case "17:15": 
+				switch (dia) {
+					case "LUNES": document.getElementById("horario").rows[8].cells[1].innerHTML = "X";
+					break;
+					case "MARTES": document.getElementById("horario").rows[8].cells[2].innerHTML = "X";
+					break;
+					case "MIERCOLES": document.getElementById("horario").rows[8].cells[3].innerHTML = "X";
+					break;
+					case "JUEVES": document.getElementById("horario").rows[8].cells[4].innerHTML = "X";
+					break;
+					case "VIERNES": document.getElementById("horario").rows[8].cells[5].innerHTML = "X";
+					break;
+					case "SABADO": document.getElementById("horario").rows[8].cells[6].innerHTML = "X";
+					break;
+				}break;
+				case "18:45": 
+				switch (dia) {
+					case "LUNES": document.getElementById("horario").rows[9].cells[1].innerHTML = "X";
+					break;
+					case "MARTES": document.getElementById("horario").rows[9].cells[2].innerHTML = "X";
+					break;
+					case "MIERCOLES": document.getElementById("horario").rows[9].cells[3].innerHTML = "X";
+					break;
+					case "JUEVES": document.getElementById("horario").rows[9].cells[4].innerHTML = "X";
+					break;
+					case "VIERNES": document.getElementById("horario").rows[9].cells[5].innerHTML = "X";
+					break;
+					case "SABADO": document.getElementById("horario").rows[9].cells[6].innerHTML = "X";
+					break;
+				}break;
+				case "20:15": 
+				switch (dia) {
+					case "LUNES": document.getElementById("horario").rows[10].cells[1].innerHTML = "X";
+					break;
+					case "MARTES": document.getElementById("horario").rows[10].cells[2].innerHTML = "X";
+					break;
+					case "MIERCOLES": document.getElementById("horario").rows[10].cells[3].innerHTML = "X";
+					break;
+					case "JUEVES": document.getElementById("horario").rows[10].cells[4].innerHTML = "X";
+					break;
+					case "VIERNES": document.getElementById("horario").rows[10].cells[5].innerHTML = "X";
+					break;
+					case "SABADO": document.getElementById("horario").rows[10].cells[6].innerHTML = "X";
+					break;
+				}
+				break;
+			}
 		}
 	</script>
 	<script src="js/bootstrap.min.js"></script>
