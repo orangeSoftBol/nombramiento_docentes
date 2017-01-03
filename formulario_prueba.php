@@ -44,6 +44,7 @@ if (isset($_GET['nomDoc'])) {
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
 
 <body> 
  
@@ -258,7 +259,7 @@ if (isset($_GET['nomDoc'])) {
 						   		</thead>
 						   		<tbody>
 						   	   		<tr>
-						        		<td>06:45</td>
+						        		<td>06:45-08:15</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
@@ -267,7 +268,7 @@ if (isset($_GET['nomDoc'])) {
 						        		<td>--</td>
 						 	     	</tr>
 						 	     	<tr>
-						        		<td>08:15</td>
+						        		<td>08:15-09:45</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
@@ -276,7 +277,7 @@ if (isset($_GET['nomDoc'])) {
 						        		<td>--</td>
 						 	     	</tr>
 						 	     	<tr>
-						        		<td>09:45</td>
+						        		<td>09:45-11:15</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
@@ -285,7 +286,7 @@ if (isset($_GET['nomDoc'])) {
 						        		<td>--</td>
 						 	     	</tr>
 						 	     	<tr>
-						        		<td>11:15</td>
+						        		<td>11:15-12:45</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
@@ -294,7 +295,7 @@ if (isset($_GET['nomDoc'])) {
 						        		<td>--</td>
 						 	     	</tr>
 						 	     	<tr>
-						        		<td>12:45</td>
+						        		<td>12:45-14:15</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
@@ -303,7 +304,7 @@ if (isset($_GET['nomDoc'])) {
 						        		<td>--</td>
 						 	     	</tr>
 						 	     	<tr>
-						        		<td>14:15</td>
+						        		<td>14:15-15:45</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
@@ -312,7 +313,7 @@ if (isset($_GET['nomDoc'])) {
 						        		<td>--</td>
 						 	     	</tr>
 						 	     	<tr>
-						        		<td>15:45</td>
+						        		<td>15:45-17:15</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
@@ -321,7 +322,7 @@ if (isset($_GET['nomDoc'])) {
 						        		<td>--</td>
 						 	     	</tr>
 						 	     	<tr>
-						        		<td>17:15</td>
+						        		<td>17:15-18:45</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
@@ -330,7 +331,7 @@ if (isset($_GET['nomDoc'])) {
 						        		<td>--</td>
 						 	     	</tr>
 						 	     	<tr>
-						        		<td>18:45</td>
+						        		<td>18:45-20:15</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
@@ -339,7 +340,7 @@ if (isset($_GET['nomDoc'])) {
 						        		<td>--</td>
 						 	     	</tr>
 						 	     	<tr>
-						        		<td>20:15</td>
+						        		<td>20:15-21:45</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
 						    	    	<td>--</td>
@@ -573,7 +574,42 @@ if (isset($_GET['nomDoc'])) {
 				}
 				break;
 			}
+			calcularHoras();
 		}
+
+		function calcularHoras(){
+			var tabla = document.getElementById("horario");
+			var horasSemana=0;
+			var rango;
+			var aux;
+			var a;
+			var b;
+			for(i=1 ; i<tabla.rows.length ; i++){
+				for(j=1 ; j<7 ; j++){
+					if(tabla.rows[i].cells[j].innerHTML == "X"){
+						rango = tabla.rows[i].cells[0].innerHTML;
+						aux = rango.split("-");
+						if(aux.length>1){
+							a = moment(new Date("October 13, 2014 " + aux[0]));
+							b = moment(new Date("October 13, 2014 " + aux[1]));
+							horasSemana += b.diff(a, 'minutes')/60;
+							//alert(typeof totalHoras);
+						}
+					}
+				}
+			}
+			//alert(totalHoras);
+			document.getElementById("horasSemana").value = horasSemana;
+			document.getElementById("horasTeoricas").value = horasSemana*4/2;
+			document.getElementById("horasPracticas").value = horasSemana*4/2;
+			document.getElementById("horasMes").value = horasSemana*4;
+			document.getElementById("horasAutorizadas").value = horasSemana*4;
+
+			//r.innerHTML = totalHoras;
+			//windows.alert("hola");
+		}
+
+
 	</script>
 	<script src="js/bootstrap.min.js"></script>
 
@@ -668,6 +704,62 @@ if (isset($_GET['nomDoc'])) {
 					  </table>
 				  </div>
 			  </div>
+			  <div class="row">
+				  <label class="col-md-1 col-form-label">Hora Inicio:</label>
+				  <div class="col-md-1">
+					  <select class="form-control">
+						  <option>06:45</option>
+						  <option>07:30</option>
+						  <option>08:15</option>
+						  <option>09:00</option>
+						  <option>09:45</option>
+						  <option>10:30</option>
+						  <option>11:15</option>
+						  <option>12:00</option>
+						  <option>12:45</option>
+						  <option>13:30</option>
+						  <option>14:15</option>
+						  <option>15:00</option>
+						  <option>15:45</option>
+						  <option>16:30</option>
+						  <option>17:15</option>
+						  <option>18:00</option>
+						  <option>18:45</option>
+						  <option>19:30</option>
+						  <option>20:15</option>
+						  <option>21:00</option>
+					  </select>
+				  </div>
+				  <label class="col-md-1 col-form-label">Hora Fin:</label>
+				  <div class="col-md-1">
+					  <select class="form-control">
+						  <option>07:30</option>
+						  <option>08:15</option>
+						  <option>09:00</option>
+						  <option>09:45</option>
+						  <option>10:30</option>
+						  <option>11:15</option>
+						  <option>12:00</option>
+						  <option>12:45</option>
+						  <option>13:30</option>
+						  <option>14:15</option>
+						  <option>15:00</option>
+						  <option>15:45</option>
+						  <option>16:30</option>
+						  <option>17:15</option>
+						  <option>18:00</option>
+						  <option>18:45</option>
+						  <option>19:30</option>
+						  <option>20:15</option>
+						  <option>21:00</option>
+						  <option>21:45</option>
+						  <option>22:30</option>
+					  </select>
+				  </div>
+				  <div class="col-md-2">
+					  <button type="button" class="btn btn-default">X</button>
+				  </div>
+			  </div>
 		  </div>
 	  </div>
   </div>
@@ -678,29 +770,29 @@ if (isset($_GET['nomDoc'])) {
 
 	  <!-- termina segunda columna-->
             <div class="col-xs-4">
-                      <label class="control-label col-xs-7">Hrs. Semana</label>
+                      <label class="control-label col-xs-7" >Hrs. Semana</label>
                       <div class="col-xs-4">
-                        <input required type="text" name="NombreProfesional" class="form-control" placeholder="Codigo" >
+                        <input required type="text" name="NombreProfesional" class="form-control" placeholder="Codigo" id="horasSemana" >
                       </div><div class="clearfix"></div>
                        <label class="control-label col-xs-7">Hrs.teoricas Mes</label>
                       <div class="col-xs-4">
-                         <input required type="text" name="NombreProfesional" class="form-control" placeholder="Codigo" >
+                         <input required type="number" name="NombreProfesional" class="form-control" placeholder="Codigo" id="horasTeoricas">
                       </div><div class="clearfix"></div>
                        <label class="control-label col-xs-7">Hrs.Practicas Mes</label>
                       <div class="col-xs-4">
-                         <input required type="text" name="NombreProfesional" class="form-control" placeholder="Codigo" >
+                         <input required type="text" name="NombreProfesional" class="form-control" placeholder="Codigo" id="horasPracticas">
                       </div><div class="clearfix"></div>
                        <label class="control-label col-xs-7">Hrs. Mes de la Materia</label>
                       <div class="col-xs-4">
-                         <input required type="text" name="NombreProfesional" class="form-control" placeholder="Codigo" >
+                         <input required type="text" name="NombreProfesional" class="form-control" placeholder="Codigo" id="horasMes">
                       </div><div class="clearfix"></div>
                       <label class="control-label col-xs-7">Hrs. Autorizadas Mes</label>
                       <div class="col-xs-4">
-                         <input required type="text" name="NombreProfesional" class="form-control" placeholder="Codigo" >
+                         <input required type="text" name="NombreProfesional" class="form-control" placeholder="Codigo" id="horasAutorizadas">
                       </div><div class="clearfix"></div>
                        <label class="control-label col-xs-7">Exclusividad</label>
                       <div class="col-xs-4">
-                         <input required type="text" name="NombreProfesional" class="form-control" placeholder="Codigo" >
+                         <input required type="number" name="NombreProfesional" class="form-control" placeholder="0" >
                       </div><div class="clearfix"></div>	
                  </div><!-- termina Tercera columna-->
                 
@@ -1022,9 +1114,7 @@ if (isset($_GET['nomDoc'])) {
 
 	
  </div>
-    <script src="../modal/js/jquery.min.js"></script>
-    <script src="../modal/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
+
 
 </body>
 
